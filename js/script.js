@@ -19,9 +19,27 @@ if (userAge < 18) {
     product
 }
 
-let p = product.toFixed(2);
-
+const p = product.toFixed(2);
 console.log(p, typeof p);
+let totalPrice = `${p}€`;
+console.log(totalPrice, typeof totalPrice);
+
+let message = "";
+
+if (userAge < 18) {
+    message = "Questo è il prezzo totale con uno sconto applicato del 20%: "
+} else if (userAge > 65) {
+    message = "Questo è il prezzo totale con uno sconto applicato del 40%:"
+} else {
+    message = "Questo è il prezzo totale:"
+}
+
+console.log(message, typeof message);
+
+const messageComplete = `${message + " " + totalPrice}`;
+console.log(messageComplete, typeof messageComplete);
 
 
+// Output
+document.getElementById("result").innerHTML = messageComplete;
 
